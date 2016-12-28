@@ -4,23 +4,87 @@
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="viewport" content="width=640">
-
-    <link rel="stylesheet" href="stylesheets/core.css" media="screen">
-    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)">
-    <link rel="stylesheet" href="stylesheets/github-light.css">
-
-    <script type="text/javascript" src="javascripts/modernizr.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function () {
-        $('#main_content').headsmart()
-      })
-    </script>
-    <title>Abc by xieshanshan</title>
+    <script src="./build/react.js"></script>
+    <script src="./build/react-dom.js"></script>
+    <script src="./build/browser.min.js"></script>
+    <link  rel="stylesheet" href="stylesheets/index.css"></link>
+    <title></title>
   </head>
-
   <body>
-    测试 
+
+    <div id="example"></div>
+
+    <script type="text/babel">
+      // screen.height // 屏幕的高度 
+      // 登录验证 
+      var Login = React.createClass({
+        getInitialState: function(){
+          return {
+            account: '',
+            password: '',
+            msg: ''
+          }
+        },
+
+        handleSetState: function(key,value,e){
+          var obj = this.state;
+          if(value){
+            obj[key] = value;
+          }else{
+            obj[key] = e.target.value;
+          }
+          
+          this.setState(obj);
+        },
+
+        handleLogin: function(){
+          if(!this.state.account){
+            this.handleSetState('msg','大笨蛋 请输入账号');
+          }else if(this.state.account!='小笨蛋爱上大笨蛋'){
+            this.handleSetState('msg','大笨蛋 快去问小笨蛋账号名是啥 ^_^');
+          }else if(!this.state.password){
+            this.handleSetState('msg','大笨蛋  密码没输 笨笨笨');
+          }else if(this.state.password!='521lt'){
+            this.handleSetState('msg','大笨蛋  密码错啦 笨笨笨');
+          }else{
+            console.log('欢迎进入我的世界');
+          }
+        },
+
+        render: function(){
+          return <div className='login-content' style={{height:`${screen.height}px`}}>
+            <img src='./images/tong.jpg'/>
+            <div className='login-box'>
+              <input placeholder='亲 输入账号' type='text' onBlur={this.handleSetState.bind(this,'account',null)}/>
+              <input placeholder='亲 输入密码' type='password' onBlur={this.handleSetState.bind(this,'password',null)}/>
+            </div>
+            <a href='javascripts:;' onClick={this.handleLogin}>带你进入我的世界</a>
+            <span>{this.state.msg}</span>
+          </div>
+        }
+      });
+
+      var Index = React.createClass({
+        getInitialState: function() {
+          return {
+            loading: true,
+            error: null,
+            data: null
+          };
+        },
+
+        componentDidMount() {
+        },
+
+        render: function() {
+          return <Login />
+        } 
+      });
+
+      ReactDOM.render(
+        <Index />,
+        document.getElementById('example')
+      );
+    </script>
   </body>
 </html>
