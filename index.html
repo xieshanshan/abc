@@ -2,15 +2,47 @@
 <html>
   <head>
     <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="viewport" content="width=640">
     <script src="./build/react.js"></script>
     <script src="./build/react-dom.js"></script>
     <script src="./build/browser.min.js"></script>
-
-    <link  rel="stylesheet" href="stylesheets/index.css"></link>
-    <title></title>
+    <link rel="stylesheet" href="stylesheets/index.css"></link>
+    <title>Love LT && XS</title>
   </head>
+  <style>
+    .home-content h1{
+      color: #1c1c1c;
+    }
+
+    .home-content .tag{
+      text-align: right;
+      padding-right: 5%;
+      font-size: 1.5em;
+    }
+
+    .home-content .tag i{
+      font-size: 1.5em;
+      padding-left: 10px;
+      color: red;
+    }
+
+    .home-content .title span{
+      display: block;
+      margin: 20px auto;
+    }
+
+    .home-content .audio-box{
+      width: 80%;
+      height: 80px;
+      margin: 40px auto;
+      border: 1px solid #fafafa;
+      background: #fcfcfc;
+      font-size: 1.8em;
+      line-height: 80px;
+      color: #7a7a7a;
+    }
+
+  </style>
   <body>
 
     <div id="example"></div>
@@ -80,13 +112,17 @@
             overflow: 'hidden'
           }
           return <div className='home-content' style={cls}>
+            <h1>多幸运, 遇见你</h1>
+            <p className='tag'><span>爱你的小笨蛋<i>ღ</i></span></p>
             <img src='./images/title.png'/>
             <p className="title">
-              嘿<br/>
-              大笨蛋<br/>
-              我喜欢你呦
+              <span>嘿</span>
+              <span>大笨蛋</span>
+              <span>我喜欢你呦</span>
+              <span>☪</span>
             </p>
-            <audio src='./yicijiuhao.mp3' controls="controls" autoplay="autoplay"></audio>
+            <div className='audio-box'>单单为你心有独钟</div>
+            <audio src='./yicijiuhao.mp3' autoplay="autoplay"></audio>
           </div>
         }
       });
@@ -97,7 +133,7 @@
             type: 1   // 登录 
           };
         },
-        
+
         handleIndexState:function(key,value){
           var obj= this.state;
           obj[key] = value;
@@ -108,11 +144,12 @@
         },
 
         render: function() {
-          if(this.state.type == 1){
-            return <Login handleType={this.handleIndexState}/>
-          }else{
-            return <Home />
-          } 
+          // if(this.state.type == 1){
+          //   return <Login handleType={this.handleIndexState}/>
+          // }else{
+          //   return <Home />
+          // } 
+          return <Home />
         } 
       });
 
