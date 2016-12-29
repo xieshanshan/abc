@@ -7,6 +7,7 @@
     <script src="./build/react.js"></script>
     <script src="./build/react-dom.js"></script>
     <script src="./build/browser.min.js"></script>
+
     <link  rel="stylesheet" href="stylesheets/index.css"></link>
     <title></title>
   </head>
@@ -15,7 +16,7 @@
     <div id="example"></div>
 
     <script type="text/babel">
-      // screen.height // 屏幕的高度 
+      
       // 登录验证 
       var Login = React.createClass({
         getInitialState: function(){
@@ -25,7 +26,7 @@
             msg: ''
           }
         },
-        
+
         handleSetState: function(key,value,e){
           var obj = this.state;
           if(value){
@@ -38,17 +39,19 @@
         },
 
         handleLogin: function(){
-          if(!this.state.account){
-            this.handleSetState('msg','大笨蛋 请输入账号');
-          }else if(this.state.account!='小笨蛋爱上大笨蛋'){
-            this.handleSetState('msg','大笨蛋 快去问小笨蛋账号名是啥 ^_^');
-          }else if(!this.state.password){
-            this.handleSetState('msg','大笨蛋  密码没输 笨笨笨');
-          }else if(this.state.password!='521lt'){
-            this.handleSetState('msg','大笨蛋  密码错啦 笨笨笨');
-          }else{
-            console.log('欢迎进入我的世界');
-          }
+          // if(!this.state.account){
+          //   this.handleSetState('msg','大笨蛋 请输入账号');
+          // }else if(this.state.account!='小笨蛋爱上大笨蛋'){
+          //   this.handleSetState('msg','大笨蛋 快去问小笨蛋账号名是啥 ^_^');
+          // }else if(!this.state.password){
+          //   this.handleSetState('msg','大笨蛋  密码没输 笨笨笨');
+          // }else if(this.state.password!='521lt'){
+          //   this.handleSetState('msg','大笨蛋  密码错啦 笨笨笨');
+          // }else{
+          //   console.log('欢迎进入我的世界');
+
+          // }
+          this.props.handleType('type',2);
         },
 
         render: function(){
@@ -60,8 +63,8 @@
           return <div className='login-content' style={cls}>
             <img src='./images/tong.jpg'/>
             <div className='login-box'>
-              <input placeholder='亲 输入账号' type='text' onBlur={this.handleSetState.bind(this,'account',null)}/>
-              <input placeholder='亲 输入密码' type='password' onBlur={this.handleSetState.bind(this,'password',null)}/>
+              <input placeholder='账号 ? 不知道去问小笨蛋' type='text' onBlur={this.handleSetState.bind(this,'account',null)}/>
+              <input placeholder='密码 ? 不知道去问小笨蛋' type='password' onBlur={this.handleSetState.bind(this,'password',null)}/>
             </div>
             <span>{this.state.msg}</span>
             <a href='javascripts:;' onClick={this.handleLogin}>确定</a>
@@ -69,20 +72,47 @@
         }
       });
 
+      // 首页 
+      var Home = React.createClass({
+        render: function(){
+          var cls={
+            textAlign: 'center',
+            overflow: 'hidden'
+          }
+          return <div className='home-content' style={cls}>
+            <img src='./images/title.png'/>
+            <p className="title">
+              嘿<br/>
+              大笨蛋<br/>
+              我喜欢你呦
+            </p>
+            <audio src='./yicijiuhao.mp3' controls="controls" autoplay="autoplay"></audio>
+          </div>
+        }
+      });
+
       var Index = React.createClass({
         getInitialState: function() {
           return {
-            loading: true,
-            error: null,
-            data: null
+            type: 1   // 登录 
           };
+        },
+        
+        handleIndexState:function(key,value){
+          var obj= this.state;
+          obj[key] = value;
+          this.setState(obj)
         },
 
         componentDidMount() {
         },
 
         render: function() {
-          return <Login />
+          if(this.state.type == 1){
+            return <Login handleType={this.handleIndexState}/>
+          }else{
+            return <Home />
+          } 
         } 
       });
 

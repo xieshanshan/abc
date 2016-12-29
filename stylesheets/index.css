@@ -4,7 +4,7 @@ html,body{
 }
 
 // 登录 
-.login-content{
+.login-content,.home-content{
   width: 100%;
   height: 100%;
   text-align: center;
@@ -49,3 +49,11 @@ html,body{
   color: #fff;
   border-radius: 3px;
 }
+
+
+// 首页 
+.home-content .title{
+  text-align: center;
+  line-height: 26px;
+}
+
