@@ -25,7 +25,7 @@
             msg: ''
           }
         },
-
+        
         handleSetState: function(key,value,e){
           var obj = this.state;
           if(value){
@@ -52,14 +52,19 @@
         },
 
         render: function(){
-          return <div className='login-content' style={{height:`${screen.height}px`}}>
+          var cls={
+            textAlign: 'center',
+            overflow: 'hidden'
+          }
+
+          return <div className='login-content' style={cls}>
             <img src='./images/tong.jpg'/>
             <div className='login-box'>
               <input placeholder='亲 输入账号' type='text' onBlur={this.handleSetState.bind(this,'account',null)}/>
               <input placeholder='亲 输入密码' type='password' onBlur={this.handleSetState.bind(this,'password',null)}/>
             </div>
-            <a href='javascripts:;' onClick={this.handleLogin}>带你进入我的世界</a>
             <span>{this.state.msg}</span>
+            <a href='javascripts:;' onClick={this.handleLogin}>确定</a>
           </div>
         }
       });
