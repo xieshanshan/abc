@@ -42,6 +42,12 @@
       color: #7a7a7a;
     }
 
+    .home-content .time p{
+      font-size: 1.5em;
+      margin-bottom: 40px;
+      color: #949494;
+    }
+
   </style>
   <body>
 
@@ -106,6 +112,30 @@
 
       // 首页 
       var Home = React.createClass({
+        getInitialState: function(){
+          return {
+            play: false
+          }
+        },
+
+        handleAudioPlay: function(){
+          var play=this.state;
+          var audio = this.refs.audio;
+          audio.play();
+          // console.log(play,'play');
+          // if(!play){
+          //   audio.play();
+          //   this.setState({
+          //     play: true
+          //   })
+          // }else{
+          //   audio.pause();
+          //   this.setState({
+          //     play: false
+          //   })
+          // }
+        },
+
         render: function(){
           var cls={
             textAlign: 'center',
@@ -121,8 +151,13 @@
               <span>我喜欢你呦</span>
               <span>☪</span>
             </p>
-            <div className='audio-box'>单单为你心有独钟</div>
-            <audio src='./yicijiuhao.mp3' autoplay="autoplay"></audio>
+            <div className='audio-box' onClick={this.handleAudioPlay}>单单为你心有独钟</div>
+            <audio src='./yicijiuhao.mp3' autoplay="autoplay" ref='audio' preload='auto' play={this.play}></audio>
+            <div className='time'>
+              △
+              <p>2017.&nbsp;&nbsp;1.&nbsp;&nbsp;1 &nbsp;&nbsp; 一 &nbsp;&nbsp;与你说元旦快乐</p>
+            </div>
+            <img src='./images/book.png'/>
           </div>
         }
       });
