@@ -89,19 +89,19 @@
         },
 
         handleLogin: function(){
-          // if(!this.state.account){
-          //   this.handleSetState('msg','大笨蛋 请输入账号');
-          // }else if(this.state.account!='小笨蛋爱上大笨蛋'){
-          //   this.handleSetState('msg','大笨蛋 快去问小笨蛋账号名是啥 ^_^');
-          // }else if(!this.state.password){
-          //   this.handleSetState('msg','大笨蛋  密码没输 笨笨笨');
-          // }else if(this.state.password!='521lt'){
-          //   this.handleSetState('msg','大笨蛋  密码错啦 笨笨笨');
-          // }else{
-          //   console.log('欢迎进入我的世界');
-
-          // }
-          this.props.handleType('type',2);
+          if(!this.state.account){
+            this.handleSetState('msg','大笨蛋 请输入账号');
+          }else if(this.state.account!='小笨蛋爱上大笨蛋'){
+            this.handleSetState('msg','大笨蛋 快去问小笨蛋账号名是啥 ^_^');
+          }else if(!this.state.password){
+            this.handleSetState('msg','大笨蛋  密码没输 笨笨笨');
+          }else if(this.state.password!='521lt'){
+            this.handleSetState('msg','大笨蛋  密码错啦 笨笨笨');
+          }else{
+            console.log('欢迎进入我的世界');
+            this.props.handleType('type',2);
+          }
+          
         },
 
         render: function(){
@@ -197,12 +197,11 @@
         },
 
         render: function() {
-          // if(this.state.type == 1){
-          //   return <Login handleType={this.handleIndexState}/>
-          // }else{
-          //   return <Home />
-          // } 
-          return <Home />
+          if(this.state.type == 1){
+            return <Login handleType={this.handleIndexState}/>
+          }else{
+            return <Home />
+          } 
         } 
       });
 

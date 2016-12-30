@@ -21,51 +21,51 @@ html,body{
 }
 
 // // 登录 
-// .login-content,.home-content{
-//   width: 100%;
-//   height: 100%;
-//   text-align: center;
-//   overflow: hidden;
-// }
+.login-content,.home-content{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  overflow: hidden;
+}
 
-// .login-box{
-//   width: 80%;
-//   margin: 0 auto;
-// }
+.login-box{
+  width: 80%;
+  margin: 0 auto;
+}
 
-// .login-content img{
-//   width: 240px;
-//   height: 240px;
-//   border-radius: 50%;
-//   display: block;
-//   margin: 20% auto 10%;
-// }
+.login-content img{
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  display: block;
+  margin: 20% auto 10%;
+}
 
-// .login-box input{
-//   width: 100%;
-//   height: 40px;
-//   border:  none;
-//   outline: none;
-//   border-bottom: 1px solid pink; 
-//   padding-left: 20px;
-//   margin-bottom: 40px;
-//   font-size: 30px;
-// }
+.login-box input{
+  width: 100%;
+  height: 40px;
+  border:  none;
+  outline: none;
+  border-bottom: 1px solid pink; 
+  padding-left: 20px;
+  margin-bottom: 40px;
+  font-size: 30px;
+}
 
-// .login-content a{
-//   display: block;
-//   width: 80%;
-//   height: 80px;
-//   text-decoration: none;
-//   text-align: center;
-//   margin-top: 60px;
-//   line-height: 80px;
-//   background: pink;
-//   margin: 40px auto;
-//   font-size: 30px;
-//   color: #fff;
-//   border-radius: 3px;
-// }
+.login-content a{
+  display: block;
+  width: 80%;
+  height: 80px;
+  text-decoration: none;
+  text-align: center;
+  margin-top: 60px;
+  line-height: 80px;
+  background: pink;
+  margin: 40px auto;
+  font-size: 30px;
+  color: #fff;
+  border-radius: 3px;
+}
 
 
 
