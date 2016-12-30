@@ -48,6 +48,18 @@
       color: #949494;
     }
 
+    .home-content .text-content{
+      width: 80%;
+      margin: 60px auto 40px;
+      text-align: left;
+    }
+
+    .home-content .text-title{
+      line-height: 36px;
+      font-size: 1.5em;
+      color: #353535;
+    }
+
   </style>
   <body>
 
@@ -151,13 +163,20 @@
               <span>我喜欢你呦</span>
               <span>☪</span>
             </p>
-            <div className='audio-box' onClick={this.handleAudioPlay}>单单为你心有独钟</div>
+            <div className='audio-box' onClick={this.handleAudioPlay}>♬ 单单为你心有独钟</div>
             <audio src='./yicijiuhao.mp3' autoplay="autoplay" ref='audio' preload='auto' play={this.play}></audio>
             <div className='time'>
               △
-              <p>2017.&nbsp;&nbsp;1.&nbsp;&nbsp;1 &nbsp;&nbsp; 一 &nbsp;&nbsp;与你说元旦快乐</p>
+              <p>二零一七 一月一日 ☆ ☆ ☆ 与你说元旦快乐</p>
             </div>
             <img src='./images/book.png'/>
+            <div className='text-content'>
+
+              <p className='text-title'>
+                “我们都是爱情经验为零的人 在爱情方面就像一张白纸 可是 当我们遇见彼此 终于可以用真心绘就美好的爱情蓝图  ”
+              </p>
+
+            </div>
           </div>
         }
       });
