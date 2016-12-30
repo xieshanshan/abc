@@ -54,6 +54,12 @@
       text-align: left;
     }
 
+    .home-content p{
+      line-height: 36px;
+      font-size: 1.5em;
+      color: #7c7c7c;
+    }
+
     .home-content .text-title{
       line-height: 36px;
       font-size: 1.5em;
@@ -89,19 +95,19 @@
         },
 
         handleLogin: function(){
-          if(!this.state.account){
-            this.handleSetState('msg','大笨蛋 请输入账号');
-          }else if(this.state.account!='小笨蛋爱上大笨蛋'){
-            this.handleSetState('msg','大笨蛋 快去问小笨蛋账号名是啥 ^_^');
-          }else if(!this.state.password){
-            this.handleSetState('msg','大笨蛋  密码没输 笨笨笨');
-          }else if(this.state.password!='521lt'){
-            this.handleSetState('msg','大笨蛋  密码错啦 笨笨笨');
-          }else{
-            console.log('欢迎进入我的世界');
-            this.props.handleType('type',2);
-          }
-          
+          // if(!this.state.account){
+          //   this.handleSetState('msg','大笨蛋 请输入账号');
+          // }else if(this.state.account!='小笨蛋爱上大笨蛋'){
+          //   this.handleSetState('msg','大笨蛋 快去问小笨蛋账号名是啥 ^_^');
+          // }else if(!this.state.password){
+          //   this.handleSetState('msg','大笨蛋  密码没输 笨笨笨');
+          // }else if(this.state.password!='521lt'){
+          //   this.handleSetState('msg','大笨蛋  密码错啦 笨笨笨');
+          // }else{
+          //   console.log('欢迎进入我的世界');
+          //   this.props.handleType('type',2);
+          // }
+          this.props.handleType('type',2);
         },
 
         render: function(){
@@ -174,6 +180,14 @@
 
               <p className='text-title'>
                 “我们都是爱情经验为零的人 在爱情方面就像一张白纸 可是 当我们遇见彼此 终于可以用真心绘就美好的爱情蓝图  ”
+              </p>
+
+              <p>
+                &nbsp;&nbsp;大哥哥，当你看到这段文字，已经是2017年了，大笨蛋，
+                元旦快乐，好想依偎在你身边亲自给你说元旦快乐，爱你，么么哒。
+                一直在想送一个什么样的元旦礼物大哥哥才最开心，小笨蛋知道最好的礼物莫过于陪在你身边，
+                时间好快， 我们已经异地一年多了。
+                虽然异地，在别人看起来很苦很苦，但一切的一切，只因有你，一切都值的，期待我们修成正果。
               </p>
             </div>
           </div>
