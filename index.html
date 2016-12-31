@@ -95,19 +95,19 @@
         },
 
         handleLogin: function(){
-          // if(!this.state.account){
-          //   this.handleSetState('msg','大笨蛋 请输入账号');
-          // }else if(this.state.account!='小笨蛋爱上大笨蛋'){
-          //   this.handleSetState('msg','大笨蛋 快去问小笨蛋账号名是啥 ^_^');
-          // }else if(!this.state.password){
-          //   this.handleSetState('msg','大笨蛋  密码没输 笨笨笨');
-          // }else if(this.state.password!='521lt'){
-          //   this.handleSetState('msg','大笨蛋  密码错啦 笨笨笨');
-          // }else{
-          //   console.log('欢迎进入我的世界');
-          //   this.props.handleType('type',2);
-          // }
-          this.props.handleType('type',2);
+          if(!this.state.account){
+            this.handleSetState('msg','大笨蛋 请输入账号');
+          }else if(this.state.account!='小笨蛋爱上大笨蛋'){
+            this.handleSetState('msg','大笨蛋 快去问小笨蛋账号名是啥 ^_^');
+          }else if(!this.state.password){
+            this.handleSetState('msg','大笨蛋  密码没输 笨笨笨');
+          }else if(this.state.password!='521lt'){
+            this.handleSetState('msg','大笨蛋  密码错啦 笨笨笨');
+          }else{
+            console.log('欢迎进入我的世界');
+            this.props.handleType('type',2);
+          }
+          // this.props.handleType('type',2);
         },
 
         render: function(){
@@ -183,11 +183,22 @@
               </p>
 
               <p>
-                &nbsp;&nbsp;大哥哥，当你看到这段文字，已经是2017年了，大笨蛋，
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;大哥哥，当你看到这段文字，已经是2017年了，大笨蛋，
                 元旦快乐，好想依偎在你身边亲自给你说元旦快乐，爱你，么么哒。
                 一直在想送一个什么样的元旦礼物大哥哥才最开心，小笨蛋知道最好的礼物莫过于陪在你身边，
                 时间好快， 我们已经异地一年多了。
-                虽然异地，在别人看起来很苦很苦，但一切的一切，只因有你，一切都值的，期待我们修成正果。
+                虽然异地，在别人看起来很苦很苦，但一切的一切，只因是你，一切都值的，期待我们修成正果。
+              </p>
+              <p>
+                不知道，为什么，最近特别想你。是不是你给我吃什么药了...,嘻嘻，在爱情这段道路上，一直是你带着小笨蛋往前走，
+                有时候我们两个在一起，就像没有任何杂念的孩子，大哥哥，你知道，有时候你真的像个孩子，
+                特别可爱，也想温暖你，也许正是看到你也是个孩子，也需要呵护，也需要包容，也需要温暖的时候，
+                才让小笨蛋如此无法自拔吧。 
+              </p>
+              <p>
+                2016年我们有过争吵，有过不理解，更多的是小笨蛋还没有真正去信赖你，还没有学会如何去对待这份感情，
+                一开始小笨蛋也很在乎你，但就是不会表达，总是不会把那份思念传递给你，总是不会主动，2016年，是最美好的一年，
+                因为让小笨蛋学会了如何去爱，学会如何去表达自己的爱，真正的去了解大哥哥，也真正的爱上了大笨蛋。
               </p>
             </div>
           </div>
